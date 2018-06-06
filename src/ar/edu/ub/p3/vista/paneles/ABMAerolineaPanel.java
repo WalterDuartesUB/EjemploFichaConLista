@@ -37,19 +37,19 @@ public class ABMAerolineaPanel extends JPanel {
 		getPanelBotones().addListener( listener );
 	}
 
-	public AerolineaPanel getPanelFichaModelo() {
+	private AerolineaPanel getPanelFichaModelo() {
 		return panelFichaModelo;
 	}
 
-	public void setPanelFichaModelo(AerolineaPanel panelFichaModelo) {
+	private void setPanelFichaModelo(AerolineaPanel panelFichaModelo) {
 		this.panelFichaModelo = panelFichaModelo;
 	}
 
-	public ABMBotonesPanel<IABMAerolineaListener, IAerolineaViewModel> getPanelBotones() {
+	private ABMBotonesPanel<IABMAerolineaListener, IAerolineaViewModel> getPanelBotones() {
 		return panelBotones;
 	}
 
-	public void setPanelBotones(ABMBotonesPanel<IABMAerolineaListener, IAerolineaViewModel> panelBotones) {
+	private void setPanelBotones(ABMBotonesPanel<IABMAerolineaListener, IAerolineaViewModel> panelBotones) {
 		this.panelBotones = panelBotones;
 	}
 

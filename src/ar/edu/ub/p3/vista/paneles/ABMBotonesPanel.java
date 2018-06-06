@@ -65,27 +65,27 @@ public class ABMBotonesPanel<L extends IABMListener<IVM>, IVM> extends JPanel {
 		this.getListeners().add(listener);		
 	}
 
-	public JButton getBotonBorrar() {
+	private JButton getBotonBorrar() {
 		return botonBorrar;
 	}
 
-	public void setBotonBorrar(JButton botonBorrar) {
+	private void setBotonBorrar(JButton botonBorrar) {
 		this.botonBorrar = botonBorrar;
 	}
 
-	public JButton getBotonGrabar() {
+	private JButton getBotonGrabar() {
 		return botonGrabar;
 	}
 
-	public void setBotonGrabar(JButton botonGrabar) {
+	private void setBotonGrabar(JButton botonGrabar) {
 		this.botonGrabar = botonGrabar;
 	}
 
-	public JButton getBotonNuevo() {
+	private JButton getBotonNuevo() {
 		return botonNuevo;
 	}
 
-	public void setBotonNuevo(JButton botonNuevo) {
+	private void setBotonNuevo(JButton botonNuevo) {
 		this.botonNuevo = botonNuevo;
 	}
 
@@ -93,7 +93,7 @@ public class ABMBotonesPanel<L extends IABMListener<IVM>, IVM> extends JPanel {
 		return listeners;
 	}
 
-	public void setListeners(Collection<L> listeners) {
+	private void setListeners(Collection<L> listeners) {
 		this.listeners = listeners;
 	}
 
@@ -101,7 +101,7 @@ public class ABMBotonesPanel<L extends IABMListener<IVM>, IVM> extends JPanel {
 		return viewModel;
 	}
 
-	public void setViewModel(IVM viewModel) {
+	private void setViewModel(IVM viewModel) {
 		this.viewModel = viewModel;
 	}
 }

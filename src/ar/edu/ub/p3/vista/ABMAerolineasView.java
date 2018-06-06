@@ -1,10 +1,13 @@
 package ar.edu.ub.p3.vista;
 
 import java.awt.GridLayout;
+import java.util.List;
 
 import javax.swing.JFrame;
 
-import ar.edu.ub.p3.controlador.ABMAerolineasControlador;
+import ar.edu.ub.p3.modelo.Aerolinea;
+import ar.edu.ub.p3.vista.listener.IABMAerolineaListener;
+import ar.edu.ub.p3.vista.listener.IListaAerolineaListener;
 import ar.edu.ub.p3.vista.paneles.ABMAerolineaPanel;
 import ar.edu.ub.p3.vista.paneles.ListaAerolineasPanel;
 
@@ -14,11 +17,10 @@ public class ABMAerolineasView extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private ListaAerolineasPanel 	 panelLista;			
-	private ABMAerolineaPanel        panelFicha;
-	private ABMAerolineasControlador controladorFicha;
+	private ABMAerolineaPanel        panelFicha;	
 	
-	public ABMAerolineasView( ABMAerolineasControlador controladorFicha ) {
-		this.setControladorFicha(controladorFicha);
+	public ABMAerolineasView( ) {
+	
 		this.addComponent();		
 		this.addLayout();
 	}
@@ -26,11 +28,6 @@ public class ABMAerolineasView extends JFrame{
 	private void addComponent() {
 		this.setPanelFicha( new ABMAerolineaPanel() );
 		this.setPanelLista( new ListaAerolineasPanel() );	
-		
-		this.getPanelLista().setInput( this.getControladorFicha().getAerolineas() );
-		
-		this.getPanelFicha().addListener( this.getControladorFicha() );
-		this.getControladorFicha().addListener( this.getPanelLista() );		
 	}
 
 	private void addLayout() {
@@ -44,27 +41,31 @@ public class ABMAerolineasView extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public ABMAerolineaPanel getPanelFicha() {
+	private ABMAerolineaPanel getPanelFicha() {
 		return panelFicha;
 	}
 
-	public void setPanelFicha(ABMAerolineaPanel panelFicha) {
+	private void setPanelFicha(ABMAerolineaPanel panelFicha) {
 		this.panelFicha = panelFicha;
 	}
 
-	public ListaAerolineasPanel getPanelLista() {
+	private ListaAerolineasPanel getPanelLista() {
 		return panelLista;
 	}
 
-	public void setPanelLista(ListaAerolineasPanel panelLista) {
+	public IListaAerolineaListener getListaAerolineaListener() {
+		return this.getPanelLista();
+	}
+	
+	private void setPanelLista(ListaAerolineasPanel panelLista) {
 		this.panelLista = panelLista;
 	}
-
-	public ABMAerolineasControlador getControladorFicha() {
-		return controladorFicha;
+	
+	public void addListener( IABMAerolineaListener controlador) {
+		this.getPanelFicha().addListener( controlador );
 	}
 
-	public void setControladorFicha(ABMAerolineasControlador controladorFicha) {
-		this.controladorFicha = controladorFicha;
+	public void setInput(List<Aerolinea> aerolineas) {
+		this.getPanelLista().setInput( aerolineas );		
 	}
 }

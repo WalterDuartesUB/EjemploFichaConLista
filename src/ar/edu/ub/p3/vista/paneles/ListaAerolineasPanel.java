@@ -140,7 +140,7 @@ public class ListaAerolineasPanel extends JPanel implements IListaAerolineaListe
 		this.getAerolineasTable().setModel( new DefaultTableModelExtension( this.getAerolineas() ) );
 	}
 
-	public List<Aerolinea> getAerolineas() {
+	private List<Aerolinea> getAerolineas() {
 		return aerolineas;
 	}
 
@@ -148,11 +148,11 @@ public class ListaAerolineasPanel extends JPanel implements IListaAerolineaListe
 		this.aerolineas = aerolineas;
 	}
 
-	public JTable getAerolineasTable() {
+	private JTable getAerolineasTable() {
 		return aerolineasTable;
 	}
 
-	public void setAerolineasTable(JTable aerolineasTable) {
+	private void setAerolineasTable(JTable aerolineasTable) {
 		this.aerolineasTable = aerolineasTable;
 	}
 
